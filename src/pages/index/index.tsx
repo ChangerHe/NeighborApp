@@ -1,11 +1,13 @@
 import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Button, Text, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
 import './index.scss'
+
+import ICON_SEARCH from '@/assets/images/search.svg';
 
 // #region 书写注意
 // 
@@ -78,6 +80,16 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
+        <View className='search'>
+          <View className='searcher'>
+            <View className='scaner'>
+              <Image src={ICON_SEARCH} />
+            </View>
+            <View className='desc'>搜索商品</View>
+          </View>
+          <View className='pig'></View>
+          <View className='cart'></View>
+        </View>
         <Button className='add_btn' onClick={this.props.add}>+</Button>
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
