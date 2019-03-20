@@ -62,7 +62,24 @@
 
   .category {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 20px;
+  }
+
+  .intro-goods {
+    .goods-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+
+  .delegation {
+    .goods-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 0 20px 0 40px;
+    }
+    
   }
 }

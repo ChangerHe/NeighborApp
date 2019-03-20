@@ -11,17 +11,17 @@ type PageOwnProps = {
 
 type PageState = {}
 
-interface CategoryCard {
+interface IntroCard {
   props: PageOwnProps;
 }
 
-class CategoryCard extends Component {
+class IntroCard extends Component {
   render() {
     const { icon, desc } = this.props;
     return (
-      <View className="category-card">
-        <Image className="category-img" src={icon} />
-        <View className="category-desc">
+      <View className="intro-card">
+        <Image className="intro-img" src={icon} />
+        <View className="intro-desc">
           <Text>{desc}</Text>
         </View>
       </View>
@@ -29,4 +29,4 @@ class CategoryCard extends Component {
   }
 }
 
-export default CategoryCard as ComponentClass<PageOwnProps, PageState>
+export default IntroCard as ComponentClass<PageOwnProps, PageState>

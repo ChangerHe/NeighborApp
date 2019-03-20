@@ -1,22 +1,26 @@
 import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
+import { View, Button, Text, Image, Swiper, SwiperItem, ScrollView } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
 import './index.scss'
 
-import ICON_SEARCH from '@/assets/images/search.svg';
-import ICON_CARD from '@/assets/images/tools_card.svg';
-import ICON_SCAN from '@/assets/images/tools_scan.svg';
-import AD_BBQ from '@/assets/images/ad-bbq.png';
-import AD_WASHCARD from '@/assets/images/ad-washcard.jpg';
-import AD_BLUEBERRY from '@/assets/images/ad-blueberry.jpg';
-import CAT_FRUITS from '@/assets/images/cat_fruits.png';
-import CAT_MILK from '@/assets/images/cat_milk.png';
+import ICON_SEARCH from '@/assets/images/search.svg'
+import ICON_CARD from '@/assets/images/tools_card.svg'
+import ICON_SCAN from '@/assets/images/tools_scan.svg'
+import AD_BBQ from '@/assets/images/ad-bbq.png'
+import AD_WASHCARD from '@/assets/images/ad-washcard.jpg'
+import AD_BLUEBERRY from '@/assets/images/ad-blueberry.jpg'
+import CAT_FRUITS from '@/assets/images/cat_fruits.png'
+import CAT_MILK from '@/assets/images/cat_milk.png'
+import DELE_PHOTO from '@/assets/images/delegation_photo.png'
 
-import CategoryCard from './CategoryCard';
+import CategoryCard from './CategoryCard'
+import IntroCard from './IntroCard'
+import DelegationCard from './DelegationCard'
+import BlockTitle from './BlockTitle'
 
 // #region 书写注意
 // 
@@ -43,13 +47,14 @@ type PageDispatchProps = {
 type PageOwnProps = {}
 
 type PageState = {
-  category: any
+  category: any,
+  introGoodsList: any,
 }
 
 type IProps = PageStateProps & PageDispatchProps & PageOwnProps
 
 interface Index {
-  props: IProps;
+  props: IProps
 }
 
 @connect(({ counter }) => ({
@@ -109,6 +114,34 @@ class Index extends Component {
     }, {
       img: CAT_MILK,
       desc: '喝水'
+    }],
+    introGoodsList: [{
+      img: CAT_FRUITS,
+      desc: '好食'
+    }, {
+      img: CAT_MILK,
+      desc: '喝水'
+    }, {
+      img: CAT_FRUITS,
+      desc: '好食'
+    }, {
+      img: CAT_MILK,
+      desc: '喝水'
+    }],
+    delegationList: [{
+      img: DELE_PHOTO,
+      time: 123456000,
+      hadGroupedNum: 20,
+      groupingNum: 78,
+      desc: '温州 | 手制胡萝卜年糕',
+      price: 22,
+    }, {
+      img: DELE_PHOTO,
+      time: 123456000,
+      hadGroupedNum: 20,
+      groupingNum: 78,
+      desc: '温州 | 手制胡萝卜年糕',
+      price: 22,
     }]
   }
 
@@ -123,7 +156,7 @@ class Index extends Component {
   componentDidHide () { }
 
   render () {
-    const { category } = this.state
+    const { category, introGoodsList, delegationList } = this.state
     return (
       <View className='index'>
         <View className='search'>
@@ -166,9 +199,30 @@ class Index extends Component {
         </Swiper>
         <View className='category'>
           {
-            category.map((v) => <CategoryCard icon={v.img} desc={v.desc} />)
+            category.map((v, i) => <CategoryCard key={i} icon={v.img} desc={v.desc} />)
           }
-          
+        </View>
+        {/* <View className="intro-goods">
+          <BlockTitle title="推荐商品" subtitle="甄选好物 品质生活" />
+          <ScrollView scrollX>
+            <View className="goods-wrapper">
+              {
+                introGoodsList.map((v, i) => <IntroCard key={i} icon={v.img} desc={v.desc} />)
+              }
+            </View>
+          </ScrollView>
+        </View> */}
+        <View className="delegation">
+          <BlockTitle title="邻居一起来" subtitle="家乡味，唤醒每一个味蕾" />
+          <ScrollView scrollX>
+            <View className="goods-wrapper">
+              {
+                delegationList.map((v, i) => <DelegationCard key={i} img={v.img} desc={v.desc} time={v.time} hadGroupedNum={v.hadGroupedNum} groupingNum={v.groupingNum} price={v.price} />)
+                // can't support 
+                // delegationList.map((v, i) => <DelegationCard key={i} {...v} />)
+              }
+            </View>
+          </ScrollView>
         </View>
       </View>
     )
