@@ -1,6 +1,6 @@
 import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button, Text, Image } from '@tarojs/components'
+import { View, Button, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
@@ -8,6 +8,15 @@ import { add, minus, asyncAdd } from '../../actions/counter'
 import './index.scss'
 
 import ICON_SEARCH from '@/assets/images/search.svg';
+import ICON_CARD from '@/assets/images/tools_card.svg';
+import ICON_SCAN from '@/assets/images/tools_scan.svg';
+import AD_BBQ from '@/assets/images/ad-bbq.png';
+import AD_WASHCARD from '@/assets/images/ad-washcard.jpg';
+import AD_BLUEBERRY from '@/assets/images/ad-blueberry.jpg';
+import CAT_FRUITS from '@/assets/images/cat_fruits.png';
+import CAT_MILK from '@/assets/images/cat_milk.png';
+
+import CategoryCard from './CategoryCard';
 
 // #region 书写注意
 // 
@@ -22,7 +31,7 @@ import ICON_SEARCH from '@/assets/images/search.svg';
 type PageStateProps = {
   counter: {
     num: number
-  }
+  },
 }
 
 type PageDispatchProps = {
@@ -33,7 +42,9 @@ type PageDispatchProps = {
 
 type PageOwnProps = {}
 
-type PageState = {}
+type PageState = {
+  category: any
+}
 
 type IProps = PageStateProps & PageDispatchProps & PageOwnProps
 
@@ -63,11 +74,45 @@ class Index extends Component {
    * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
-    config: Config = {
+  config: Config = {
     navigationBarTitleText: '首页'
   }
 
-  componentWillReceiveProps (nextProps) {
+  state = {
+    category: [{
+      img: CAT_FRUITS,
+      desc: '好食'
+    }, {
+      img: CAT_MILK,
+      desc: '喝水'
+    }, {
+      img: CAT_FRUITS,
+      desc: '好食'
+    }, {
+      img: CAT_MILK,
+      desc: '喝水'
+    }, {
+      img: CAT_FRUITS,
+      desc: '好食'
+    }, {
+      img: CAT_MILK,
+      desc: '喝水'
+    }, {
+      img: CAT_FRUITS,
+      desc: '好食'
+    }, {
+      img: CAT_MILK,
+      desc: '喝水'
+    }, {
+      img: CAT_FRUITS,
+      desc: '好食'
+    }, {
+      img: CAT_MILK,
+      desc: '喝水'
+    }]
+  }
+
+  componentWillReceiveProps (nextProps: any) {
     console.log(this.props, nextProps)
   }
 
@@ -78,23 +123,53 @@ class Index extends Component {
   componentDidHide () { }
 
   render () {
+    const { category } = this.state
     return (
       <View className='index'>
         <View className='search'>
           <View className='searcher'>
             <View className='scaner'>
-              <Image src={ICON_SEARCH} />
+              <Image className='icon' src={ICON_SEARCH} />
             </View>
             <View className='desc'>搜索商品</View>
           </View>
-          <View className='pig'></View>
-          <View className='cart'></View>
+          <View className='pig'>
+            <Image className='icon' src={ICON_CARD} />
+          </View>
+          <View className='cart'>
+            <Image className='icon' src={ICON_SCAN} />
+          </View>
         </View>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
+        <Swiper
+          className='ad-swiper'
+          indicatorColor='rgba(0,0,0,.4)'
+          indicatorActiveColor='#fff'
+          // vertical
+          circular
+          indicatorDots
+          autoplay>
+          <SwiperItem>
+            <View className='swiper-item'>
+              <Image className='swiper-img' src={AD_BBQ} />
+            </View>
+          </SwiperItem>
+          <SwiperItem>
+            <View className='swiper-item'>
+              <Image className='swiper-img' src={AD_WASHCARD} />
+            </View>
+          </SwiperItem>
+          <SwiperItem>
+            <View className='swiper-item'>
+              <Image className='swiper-img' src={AD_BLUEBERRY} />
+            </View>
+          </SwiperItem>
+        </Swiper>
+        <View className='category'>
+          {
+            category.map((v) => <CategoryCard icon={v.img} desc={v.desc} />)
+          }
+          
+        </View>
       </View>
     )
   }

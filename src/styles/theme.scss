@@ -1,16 +1,72 @@
 @import "./mixins.scss";
 
-$primary-color: #ab2b2b;
-$disabled-color: #dddddd;
+// == Color
+// = Base
+$color-base-primary: #ef7c79;
 
-$black: #000000;
-$white: #ffffff;
+// = Button
+$color-button-primary: #eb5b58;
+$color-button-primary-active: #cd4d4b;
+$color-button-primary-disabled: #faacab;
 
-$text-color: #333333;
-$text-color-light: #666666;
-$text-color-lighter: #999999;
+// = Text
+$color-text-primary: #454545;
+$color-text-sub: #909090;
+$color-text-light: #c9c9c9;
+$color-text-large-title: rgb(204, 156, 100);
 
-$border-color: #dddddd;
-$border-radius: 4px;
+// = Border
+$color-border: #eaeaea;
+$color-border-deep: #909090;
+$color-border-opacity: rgba(69, 69, 69, .1);
 
-$image-bg: #f4f4f4;
+// = Background
+$color-background: #f9f9f9;
+
+// = regulatory
+$color-z1: #eb5b58;
+$color-z2: #cd4d4b;
+$color-z3: #faacab;
+$color-z4: #ef7c79;
+
+$color-f1: #454545;
+$color-f2: #909090;
+$color-f3: #c9c9c9;
+$color-f4: #eaeaea;
+$color-f5: #f9f9f9;
+$color-f6: #fff;
+
+$color-f11: #f27e52;
+$color-f12: #fcae3c;
+$color-f13: #80b692;
+$color-f14: #5a79ba;
+$color-f15: #7f73a5;
+$color-f16: #b387b5;
+
+$color-f111: #f59875;
+$color-f112: #f7b297;
+
+$color-f121: #fdbe63;
+$color-f122: #fdcf8a;
+
+$color-f131: #99c5a8;
+$color-f132: #b3d3be;
+
+$color-f141: #7b94c8;
+$color-f142: #9cafd6;
+
+$color-f151: #998fb7;
+$color-f152: #b2abc9;
+
+$color-f161: #c39fc4;
+$color-f162: #d1b7d3;
+
+$font-t1: 28px;
+$font-t2: 20px;
+$font-t3: 18px;
+$font-t4: 16px;
+$font-t5: 14px;
+$font-t6: 12px;
+$font-t7: 10px;
+
+$color-hover-active: rgb(253, 253, 253);
