@@ -1,4 +1,5 @@
 .delegation-card {
+  flex: 0 0 676px;
   position: relative;
   width: 676px;
   height: 404px;
@@ -18,9 +19,9 @@
   .price {
     position: absolute;
     top: 210px;
-    width: 676px;
+    width: 636px;
     height: 56px;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     padding: 0 20px;
     text-align: right;
     font-weight: bold;
@@ -36,7 +37,7 @@
     display: flex;
     margin-left: 20px;
     .block {
-      box-sizing: border-box;
+      // box-sizing: border-box;
       width: 72px;
       height: 80px;
       margin: 0 10px;
@@ -53,12 +54,15 @@
       &.interval {
         padding: 4px 10px;
         text-align: center;
-        font-size: 16px;
         color: rgb(255, 255, 255);
 
         .num {
           font-size: 32px;
           font-weight: bold;
+        }
+
+        .unit {
+          font-size: 16px;
         }
       }
     }
@@ -67,7 +71,7 @@
   .delegation-desc {
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     padding: 20px;
 
     .desc {

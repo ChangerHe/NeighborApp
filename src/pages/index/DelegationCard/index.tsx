@@ -34,16 +34,16 @@ class DelegationCard extends Component {
             <Text>剩余时间</Text>
           </View>
           <View className="block interval">
-            <View className="num">01</View>
-            <Text>天</Text>
+            <View className="num"><Text>01</Text></View>
+            <View className="unit"><Text>天</Text></View>
           </View>
           <View className="block interval">
-            <View className="num">23</View>
-            <Text>时</Text>
+            <View className="num"><Text>23</Text></View>
+            <View className="unit"><Text>时</Text></View>
           </View>
           <View className="block interval">
-            <View className="num">41</View>
-            <Text>分</Text>
+            <View className="num"><Text>41</Text></View>
+            <View className="unit"><Text>分</Text></View>
           </View>
         </View>
         <View className="delegation-desc">

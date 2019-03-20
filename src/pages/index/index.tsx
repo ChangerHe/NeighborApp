@@ -7,6 +7,12 @@ import { add, minus, asyncAdd } from '../../actions/counter'
 
 import './index.scss'
 
+/**
+ * problem collection:
+ * 1. cannot support svg image in native platform
+ * 2. cannot support box-sizing style
+ */
+
 // import ICON_SEARCH from '@/assets/images/search.svg'
 // import ICON_CARD from '@/assets/images/tools_card.svg'
 // import ICON_SCAN from '@/assets/images/tools_scan.svg'
@@ -17,10 +23,10 @@ import './index.scss'
 // import CAT_MILK from '@/assets/images/cat_milk.png'
 // import DELE_PHOTO from '@/assets/images/delegation_photo.png'
 
-const ICON_SEARCH = 'https://img.4009515151.com/search.svg'
-const ICON_CARD = 'https://img.4009515151.com/tools_card.svg'
-const ICON_SCAN = 'https://img.4009515151.com/tools_scan.svg'
-const ICON_CORNER = 'https://img.4009515151.com/icon_corner_4.svg'
+const ICON_SEARCH = 'https://img.4009515151.com/search.png'
+const ICON_CARD = 'https://img.4009515151.com/tools_card.png'
+const ICON_SCAN = 'https://img.4009515151.com/tools_scan.png'
+const ICON_CORNER = 'https://img.4009515151.com/icon_corner_4.png'
 const AD_BBQ = 'https://img.4009515151.com/ad-bbq.png'
 const AD_WASHCARD = 'https://img.4009515151.com/ad-washcard.jpg'
 const AD_BLUEBERRY = 'https://img.4009515151.com/ad-blueberry.jpg'
@@ -176,7 +182,7 @@ class Index extends Component {
             <View className='scaner'>
               <Image className='icon' src={ICON_SEARCH} />
             </View>
-            <View className='desc'>搜索商品</View>
+            <View className='desc'><Text>搜索商品</Text></View>
           </View>
           <View className='pig'>
             <Image className='icon' src={ICON_CARD} />
