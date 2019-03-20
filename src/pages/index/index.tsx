@@ -7,15 +7,27 @@ import { add, minus, asyncAdd } from '../../actions/counter'
 
 import './index.scss'
 
-import ICON_SEARCH from '@/assets/images/search.svg'
-import ICON_CARD from '@/assets/images/tools_card.svg'
-import ICON_SCAN from '@/assets/images/tools_scan.svg'
-import AD_BBQ from '@/assets/images/ad-bbq.png'
-import AD_WASHCARD from '@/assets/images/ad-washcard.jpg'
-import AD_BLUEBERRY from '@/assets/images/ad-blueberry.jpg'
-import CAT_FRUITS from '@/assets/images/cat_fruits.png'
-import CAT_MILK from '@/assets/images/cat_milk.png'
-import DELE_PHOTO from '@/assets/images/delegation_photo.png'
+// import ICON_SEARCH from '@/assets/images/search.svg'
+// import ICON_CARD from '@/assets/images/tools_card.svg'
+// import ICON_SCAN from '@/assets/images/tools_scan.svg'
+// import AD_BBQ from '@/assets/images/ad-bbq.png'
+// import AD_WASHCARD from '@/assets/images/ad-washcard.jpg'
+// import AD_BLUEBERRY from '@/assets/images/ad-blueberry.jpg'
+// import CAT_FRUITS from '@/assets/images/cat_fruits.png'
+// import CAT_MILK from '@/assets/images/cat_milk.png'
+// import DELE_PHOTO from '@/assets/images/delegation_photo.png'
+
+const ICON_SEARCH = 'https://img.4009515151.com/search.svg'
+const ICON_CARD = 'https://img.4009515151.com/tools_card.svg'
+const ICON_SCAN = 'https://img.4009515151.com/tools_scan.svg'
+const ICON_CORNER = 'https://img.4009515151.com/icon_corner_4.svg'
+const AD_BBQ = 'https://img.4009515151.com/ad-bbq.png'
+const AD_WASHCARD = 'https://img.4009515151.com/ad-washcard.jpg'
+const AD_BLUEBERRY = 'https://img.4009515151.com/ad-blueberry.jpg'
+const CAT_FRUITS = 'https://img.4009515151.com/cat_fruits.png'
+const CAT_MILK = 'https://img.4009515151.com/cat_milk.png'
+const DELE_PHOTO = 'https://img.4009515151.com/delegation_photo.png'
+const AD_BOTTOM = 'https://img.4009515151.com/ad_bottom.png'
 
 import CategoryCard from './CategoryCard'
 import IntroCard from './IntroCard'
@@ -202,7 +214,7 @@ class Index extends Component {
             category.map((v, i) => <CategoryCard key={i} icon={v.img} desc={v.desc} />)
           }
         </View>
-        {/* <View className="intro-goods">
+        <View className="intro-goods">
           <BlockTitle title="推荐商品" subtitle="甄选好物 品质生活" />
           <ScrollView scrollX>
             <View className="goods-wrapper">
@@ -211,7 +223,7 @@ class Index extends Component {
               }
             </View>
           </ScrollView>
-        </View> */}
+        </View>
         <View className="delegation">
           <BlockTitle title="邻居一起来" subtitle="家乡味，唤醒每一个味蕾" />
           <ScrollView scrollX>
@@ -223,6 +235,37 @@ class Index extends Component {
               }
             </View>
           </ScrollView>
+        </View>
+        <View className="ad">
+          <Image className="img" src={AD_BOTTOM} />
+        </View>
+        <View className="youling-badge">
+          <View className="rank">
+            <Image className="img" src={ICON_CORNER} />
+            <View className="rank-detail">
+              <View className="num">
+                <Text>12</Text>
+              </View>
+              <View className="desc">
+                <Text>全国排名</Text>
+              </View>
+            </View>
+          </View>
+          <View className="total-num">
+            <View className="line"></View>
+            <View className="num">
+              <Text>6421.92</Text>
+            </View>
+            <View className="desc">
+              <Text>本社区友邻计划募集额(元)</Text>
+            </View>
+          </View>
+          <View className="youling-desc">
+            <Text>“友邻计划”是指物业公司将在社区内开展邻里团购等有偿服务所产生的利润，以捐赠、赞助等方式投入到社区硬件常新及邻里文化建设两大领域。它并非某种基金，而是旨在汇聚友邻的共同行动，让社区变得更好</Text>
+          </View>
+          <View className="youling-detail">
+            <Text>查看更多详情</Text>
+          </View>
         </View>
       </View>
     )
