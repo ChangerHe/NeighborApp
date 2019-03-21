@@ -16,7 +16,10 @@
   }
 
   &-subtitle {
+    padding-bottom: 0px;
+    /*postcss-pxtransform rn eject enable*/
     padding-bottom: 4px;
+    /*postcss-pxtransform rn eject disable*/
   }
 
   &-subtitle-text {
