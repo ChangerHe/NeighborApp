@@ -50,8 +50,6 @@
 
     &-desc {
       @include styleBlock();
-      // padding: 12px 20px 2px;
-      line-height: 20px;
       @include textAlign(center);
 
       &-wrapper {
@@ -59,7 +57,10 @@
       }
 
       &-interval-wrapper {
+        padding: 10px 0 0;
+        /*postcss-pxtransform rn eject enable*/
         padding: 0 20px;
+        /*postcss-pxtransform rn eject disable*/
       }
 
       &-text {
@@ -76,10 +77,16 @@
   }
   &-interval-num {
     @include textAlign(center);
+    height: 30px;
+    /*postcss-pxtransform rn eject enable*/
     height: 20px;
+    /*postcss-pxtransform rn eject disable*/
   }
   &-interval-num-text {
+    line-height: 30px;
+    /*postcss-pxtransform rn eject enable*/
     line-height: 20px;
+    /*postcss-pxtransform rn eject disable*/
     text-align: center;
     font-size: 32px;
     font-weight: bold;
