@@ -1,11 +1,18 @@
 @import "@styles/theme.scss";
 
+@mixin houdredPercent() {
+  width: 100%;
+  height: 100%;
+}
+
 .index {
-  .icon {
+  background-color: #fff;
+  &-icon {
     width: 48px;
     height: 48px;
   }
-  .search {
+
+  &-search {
     height: 88px;
     // width: 100%;
     display: flex;
@@ -14,59 +21,60 @@
     align-items: center;
     // box-sizing: border-box;
     padding: 0 40px;
-    .searcher {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-      height: 56px;
-      border-radius: 56px;
-      background-color: #ececec;
-      .scaner {
-        .icon {
-          width: 28px;
-          height: 28px;
-        }
-      }
-      .desc {
-        font-size: 24px;
-        color: rgb(144, 144, 144);
-      }
-    }
-
-    .pig {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      flex: 0 0 88px;
-    }
-
-    .cart {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      flex: 0 0 88px;
-      
-    }
   }
 
-  .ad-swiper {
+  &-searcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 56px;
+    border-radius: 56px;
+    background-color: #ececec;
+  }
+
+  &-scaner-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  &-desc-text{
+    font-size: 24px;
+    color: rgb(144, 144, 144);
+  }
+
+  &-pig {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 88px;
+  } 
+
+  &-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 88px;
+    
+  }
+
+  &-ad-swiper {
     width: 100%;
     height: 292px;
-    .swiper-item {
-      width: 100%;
-      height: 100%;
-      .swiper-img {
-        width: 100%;
-        height: 100%;
-      }
-    }
   }
 
-  .category {
+  &-swiper-item {
+    @include houdredPercent();
+  }
+
+  &-swiper-img {
+    @include houdredPercent();
+  }
+
+  &-category {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -74,110 +82,318 @@
     padding: 0 20px;
   }
 
-  .intro-goods {
-    .goods-wrapper {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-    }
+  &-goods-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 20px 0 40px;
   }
 
-  .delegation {
-    .goods-wrapper {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      padding: 0 20px 0 40px;
-    }
-  }
-
-  .ad {
+  &-ad {
     // width: 100%;
     height: 144px;
     // box-sizing: border-box;
     padding: 0 40px;
     margin: 40px 0;
-
-    .img {
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-    }
   }
 
-  .youling-badge {
+  &-ad-img {
     width: 100%;
-    .rank {
-      position: relative;
-      margin: 140px auto 0;
-      width: 112px;
-      height: 120px;
-      .img {
-        width: 100%;
-        height: 100%;
-      }
+    height: 100%;
+    border-radius: 12px;
+  }
 
-      .rank-detail {
-        position: absolute;
-        top: 10px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        color: #fff;
-        text-align: center;
-        .num {
-          width: 100%;
-          font-size: 32px;
-          font-weight: bold;
-        }
+  &-youling-badge {
+    width: 100%;
+  }
 
-        .desc {
-          font-size: 20px;
-        }
-      }
-    }
+  &-rank {
+    position: relative;
+    margin: 140px auto 0;
+    width: 112px;
+    height: 120px; 
+  }
 
-    .total-num {
-      margin: 80px 0 0;
-      .line {
-        height: 1PX;
-        background-color: #eee;
-      }
+  &-rank-img {
+    @include houdredPercent();
+  }
 
-      .num {
-        position: relative;
-        top: -30px;
-        width: 280px;
-        margin: 0 auto;
-        text-align: center;
-        font-weight: bold;
-        color: rgb(144, 144, 144);
-        font-size: 36px;
-        background-color: #fff;
-      }
+  &-rank-detail {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    @include textAlign(center);
+  }
 
-      .desc {
-        position: relative;
-        top: -30px;
-        font-size: 20px;
-        color: rgb(201, 201, 201);
-        text-align: center;
-      }
-    }
+  &-rank-detail-num {
+    width: 100%;
+    @include textAlign(center);
+    height: 40px;
+  }
 
-    .youling-desc {
-      // box-sizing: border-box;
-      padding: 40px 72px 10px;
-      text-align: center;
-      font-size: 24px;
-      color: rgb(144, 144, 144);
-    }
+  &-rank-detail-num-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
 
-    .youling-detail {
-      font-size: 24px;
-      color: rgb(235, 91, 88);
-      text-align: center;
-      margin-bottom: 100px;
-    }
+  }
+
+  &-rank-detail-desc {
+    @include textAlign(center);
+  }
+
+  &-rank-detail-desc-text {
+    line-height: 20px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+  }
+
+  &-total-num {
+    margin: 80px 0 0;
+  }
+
+  &-line {
+    height: 1PX;
+    background-color: #eee;
+  }
+
+  &-total-num-num {
+    position: relative;
+    top: -30px;
+    width: 280px;
+    margin: 0 auto;
+    background-color: #fff;
+    @include textAlign(center);
+  }
+
+  &-total-num-num-text {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(144, 144, 144);
+    font-size: 36px;
+  }
+
+  &-total-num-desc {
+    position: relative;
+    top: -30px;
+    @include textAlign(center);
+  }
+
+  &-total-num-desc-text {
+    font-size: 20px;
+    color: rgb(201, 201, 201);
+    text-align: center;
+  }
+
+  &-youling-desc {
+    // box-sizing: border-box;
+    padding: 40px 72px 10px;
+    @include textAlign(center);
+  }
+
+  &-youling-desc-text {
+    text-align: center;
+    font-size: 24px;
+    color: rgb(144, 144, 144);
+  }
+
+  &-youling-detail {
+    margin-bottom: 100px;
+    @include textAlign(center);
+  }
+
+  &-youling-detail-text {
+    font-size: 24px;
+    color: rgb(235, 91, 88);
+    text-align: center;
   }
 }
+
+
+// .index {
+//   // .icon {
+//   //   width: 48px;
+//   //   height: 48px;
+//   // }
+//   .search {
+//     height: 88px;
+//     // width: 100%;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     // box-sizing: border-box;
+//     padding: 0 40px;
+//     .searcher {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: center;
+//       align-items: center;
+//       flex: 1;
+//       height: 56px;
+//       border-radius: 56px;
+//       background-color: #ececec;
+//       .scaner {
+//         .icon {
+//           width: 28px;
+//           height: 28px;
+//         }
+//       }
+//       .desc {
+//         font-size: 24px;
+//         color: rgb(144, 144, 144);
+//       }
+//     }
+
+//     .pig {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: flex-end;
+//       align-items: center;
+//       flex: 0 0 88px;
+//     }
+
+//     .cart {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: flex-end;
+//       align-items: center;
+//       flex: 0 0 88px;
+//     }
+
+
+//   }
+
+//   .ad-swiper {
+//     width: 100%;
+//     height: 292px;
+//     .swiper-item {
+//       width: 100%;
+//       height: 100%;
+//       .swiper-img {
+//         width: 100%;
+//         height: 100%;
+//       }
+//     }
+//   }
+
+//   .category {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     flex-wrap: wrap;
+//     padding: 0 20px;
+//   }
+
+//   .intro-goods {
+//     .goods-wrapper {
+//       display: flex;
+//       flex-direction: row;
+//       flex-wrap: nowrap;
+//     }
+//   }
+
+//   .delegation {
+//     .goods-wrapper {
+//       display: flex;
+//       flex-direction: row;
+//       flex-wrap: nowrap;
+//       padding: 0 20px 0 40px;
+//     }
+//   }
+
+//   .ad {
+//     // width: 100%;
+//     height: 144px;
+//     // box-sizing: border-box;
+//     padding: 0 40px;
+//     margin: 40px 0;
+
+//     .img {
+//       width: 100%;
+//       height: 100%;
+//       border-radius: 12px;
+//     }
+//   }
+
+//   .youling-badge {
+//     width: 100%;
+//     .rank {
+//       position: relative;
+//       margin: 140px auto 0;
+//       width: 112px;
+//       height: 120px;
+//       .img {
+//         width: 100%;
+//         height: 100%;
+//       }
+
+//       .rank-detail {
+//         position: absolute;
+//         top: 10px;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         color: #fff;
+//         text-align: center;
+//         .num {
+//           width: 100%;
+//           font-size: 32px;
+//           font-weight: bold;
+//         }
+
+//         .desc {
+//           font-size: 20px;
+//         }
+//       }
+//     }
+
+//     .total-num {
+//       margin: 80px 0 0;
+//       .line {
+//         height: 1PX;
+//         background-color: #eee;
+//       }
+
+//       .num {
+//         position: relative;
+//         top: -30px;
+//         width: 280px;
+//         margin: 0 auto;
+//         text-align: center;
+//         font-weight: bold;
+//         color: rgb(144, 144, 144);
+//         font-size: 36px;
+//         background-color: #fff;
+//       }
+
+//       .desc {
+//         position: relative;
+//         top: -30px;
+//         font-size: 20px;
+//         color: rgb(201, 201, 201);
+//         text-align: center;
+//       }
+//     }
+
+//     .youling-desc {
+//       // box-sizing: border-box;
+//       padding: 40px 72px 10px;
+//       text-align: center;
+//       font-size: 24px;
+//       color: rgb(144, 144, 144);
+//     }
+
+//     .youling-detail {
+//       font-size: 24px;
+//       color: rgb(235, 91, 88);
+//       text-align: center;
+//       margin-bottom: 100px;
+//     }
+//   }
+// }

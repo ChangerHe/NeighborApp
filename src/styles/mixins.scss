@@ -58,3 +58,13 @@
   -webkit-box-orient: vertical;
   /*postcss-pxtransform rn eject disable*/
 }
+
+/**
+ * NOTE RN无法在view中设置textAlign 而这个在其他端是必须的
+ */
+
+@mixin textAlign($pos) {
+  /*postcss-pxtransform rn eject enable*/
+  text-align: $pos;
+  /*postcss-pxtransform rn eject disable*/
+}

@@ -1,15 +1,23 @@
-.intro-card {
-  flex: 0 0 210px;
-  width: 210px;
-  height: 270px;
-  padding: 48px 20px 0;
+@import "@styles/theme.scss";
 
-  .intro-img {
+.intro-card {
+  &-card {
+    flex: 0 0 250px;
+    width: 210px;
+    height: 270px;
+    padding: 48px 20px 0;
+  }
+
+  &-img {
     width: 210px;
     height: 210px;
   }
 
-  .intro-desc {
+  &-desc {
+    @include textAlign(center);
+  }
+
+  &-desc-text {
     font-size: 24px;
     color: rgb(144, 144, 144);
     text-align: center;

@@ -20,9 +20,9 @@ class IntroCard extends Component {
     const { icon, desc } = this.props;
     return (
       <View className="intro-card">
-        <Image className="intro-img" src={icon} />
-        <View className="intro-desc">
-          <Text>{desc}</Text>
+        <Image className="intro-card-img" src={icon} />
+        <View className="intro-card-desc">
+          <Text className="intro-card-desc-text">{desc}</Text>
         </View>
       </View>
     )

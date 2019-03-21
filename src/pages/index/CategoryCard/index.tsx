@@ -20,9 +20,9 @@ class CategoryCard extends Component {
     const { icon, desc } = this.props;
     return (
       <View className="category-card">
-        <Image className="category-img" src={icon} />
-        <View className="category-desc">
-          <Text>{desc}</Text>
+        <Image className="category-card-img" src={icon} />
+        <View className="category-card-desc">
+          <Text className="category-card-desc-text">{desc}</Text>
         </View>
       </View>
     )

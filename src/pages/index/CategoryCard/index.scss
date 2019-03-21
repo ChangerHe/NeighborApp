@@ -1,17 +1,26 @@
+@import "@styles/theme.scss";
+
 .category-card {
   flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 140px;
   width: 100px;
   height: 160px;
   padding: 48px 20px 0;
 
-  .category-img {
+  &-img {
     width: 100px;
     height: 100px;
   }
 
-  .category-desc {
+  &-desc {
+    @include textAlign(center);
+  }
+
+  &-desc-text {
     font-size: 24px;
     color: rgb(69, 69, 69);
     text-align: center;
+
   }
 }

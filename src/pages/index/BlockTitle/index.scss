@@ -1,3 +1,5 @@
+@import "@styles/theme.scss";
+
 .block-title {
   display: flex;
   flex-direction: row;
@@ -7,19 +9,22 @@
   padding: 56px 40px 32px;
   align-items: flex-end;
 
-  .title {
+  &-title-text {
     font-size: 40px;
     font-weight: bold;
     color: rgb(57, 57, 57);
   }
 
-  .subtitle {
+  &-subtitle {
     padding-bottom: 4px;
+  }
+
+  &-subtitle-text {
     font-size: 24px;
     color: rgb(144, 144, 144);
   }
 
-  .see-more {
+  &-see-more-text {
     font-size: 32px;
     color: rgb(235, 91, 88);
   }

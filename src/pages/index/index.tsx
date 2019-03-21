@@ -11,6 +11,8 @@ import './index.scss'
  * problem collection:
  * 1. cannot support svg image in native platform
  * 2. cannot support box-sizing style
+ * 3. text-align in View is usefull in h5/weapp bus useless in rn
+ * 4. expo send package must over the wall
  */
 
 /**
@@ -183,22 +185,22 @@ class Index extends Component {
     const { category, introGoodsList, delegationList } = this.state
     return (
       <View className='index'>
-        <View className='search'>
-          <View className='searcher'>
-            <View className='scaner'>
-              <Image className='icon' src={ICON_SEARCH} />
+        <View className='index-search'>
+          <View className='index-searcher'>
+            <View className='index-scaner'>
+              <Image className='index-scaner-icon' src={ICON_SEARCH} />
             </View>
-            <View className='desc'><Text>搜索商品</Text></View>
+            <View className='index-desc'><Text className='index-desc-text'>搜索商品</Text></View>
           </View>
-          <View className='pig'>
-            <Image className='icon' src={ICON_CARD} />
+          <View className='index-pig'>
+            <Image className='index-icon' src={ICON_CARD} />
           </View>
-          <View className='cart'>
-            <Image className='icon' src={ICON_SCAN} />
+          <View className='index-cart'>
+            <Image className='index-icon' src={ICON_SCAN} />
           </View>
         </View>
         <Swiper
-          className='ad-swiper'
+          className='index-ad-swiper'
           indicatorColor='rgba(0,0,0,.4)'
           indicatorActiveColor='#fff'
           // vertical
@@ -206,40 +208,40 @@ class Index extends Component {
           indicatorDots
           autoplay>
           <SwiperItem>
-            <View className='swiper-item'>
-              <Image className='swiper-img' src={AD_BBQ} />
+            <View className='index-swiper-item'>
+              <Image className='index-swiper-img' src={AD_BBQ} />
             </View>
           </SwiperItem>
           <SwiperItem>
-            <View className='swiper-item'>
-              <Image className='swiper-img' src={AD_WASHCARD} />
+            <View className='index-swiper-item'>
+              <Image className='index-swiper-img' src={AD_WASHCARD} />
             </View>
           </SwiperItem>
           <SwiperItem>
-            <View className='swiper-item'>
-              <Image className='swiper-img' src={AD_BLUEBERRY} />
+            <View className='index-swiper-item'>
+              <Image className='index-swiper-img' src={AD_BLUEBERRY} />
             </View>
           </SwiperItem>
         </Swiper>
-        <View className='category'>
+        <View className='index-category'>
           {
             category.map((v, i) => <CategoryCard key={i} icon={v.img} desc={v.desc} />)
           }
         </View>
-        <View className="intro-goods">
+        <View className="index-intro-goods">
           <BlockTitle title="推荐商品" subtitle="甄选好物 品质生活" />
           <ScrollView scrollX>
-            <View className="goods-wrapper">
+            <View className="index-goods-wrapper">
               {
                 introGoodsList.map((v, i) => <IntroCard key={i} icon={v.img} desc={v.desc} />)
               }
             </View>
           </ScrollView>
         </View>
-        <View className="delegation">
+        <View className="index-delegation">
           <BlockTitle title="邻居一起来" subtitle="家乡味，唤醒每一个味蕾" />
           <ScrollView scrollX>
-            <View className="goods-wrapper">
+            <View className="index-goods-wrapper">
               {
                 delegationList.map((v, i) => <DelegationCard key={i} img={v.img} desc={v.desc} time={v.time} hadGroupedNum={v.hadGroupedNum} groupingNum={v.groupingNum} price={v.price} />)
                 // can't support 
@@ -248,35 +250,35 @@ class Index extends Component {
             </View>
           </ScrollView>
         </View>
-        <View className="ad">
-          <Image className="img" src={AD_BOTTOM} />
+        <View className="index-ad">
+          <Image className="index-ad-img" src={AD_BOTTOM} />
         </View>
-        <View className="youling-badge">
-          <View className="rank">
-            <Image className="img" src={ICON_CORNER} />
-            <View className="rank-detail">
-              <View className="num">
-                <Text>12</Text>
+        <View className="index-youling-badge">
+          <View className="index-rank">
+            <Image className="index-rank-img" src={ICON_CORNER} />
+            <View className="index-rank-detail">
+              <View className="index-rank-detail-num">
+                <Text className="index-rank-detail-num-text">12</Text>
               </View>
-              <View className="desc">
-                <Text>全国排名</Text>
+              <View className="index-rank-detail-desc">
+                <Text className="index-rank-detail-desc-text">全国排名</Text>
               </View>
             </View>
           </View>
-          <View className="total-num">
-            <View className="line"></View>
-            <View className="num">
-              <Text>6421.92</Text>
+          <View className="index-total-num">
+            <View className="index-line"></View>
+            <View className="index-total-num-num">
+              <Text className="index-total-num-num-text">6421.92</Text>
             </View>
-            <View className="desc">
-              <Text>本社区友邻计划募集额(元)</Text>
+            <View className="index-total-num-desc">
+              <Text className="index-total-num-desc-text">本社区友邻计划募集额(元)</Text>
             </View>
           </View>
-          <View className="youling-desc">
-            <Text>“友邻计划”是指物业公司将在社区内开展邻里团购等有偿服务所产生的利润，以捐赠、赞助等方式投入到社区硬件常新及邻里文化建设两大领域。它并非某种基金，而是旨在汇聚友邻的共同行动，让社区变得更好</Text>
+          <View className="index-youling-desc">
+            <Text className="index-youling-desc-text">“友邻计划”是指物业公司将在社区内开展邻里团购等有偿服务所产生的利润，以捐赠、赞助等方式投入到社区硬件常新及邻里文化建设两大领域。它并非某种基金，而是旨在汇聚友邻的共同行动，让社区变得更好</Text>
           </View>
-          <View className="youling-detail">
-            <Text>查看更多详情</Text>
+          <View className="index-youling-detail">
+            <Text className="index-youling-detail-text">查看更多详情</Text>
           </View>
         </View>
       </View>
