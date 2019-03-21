@@ -32,9 +32,10 @@
   }
 
   .time {
+    display: flex;
+    flex-direction: row;
     position: absolute;
     top: 160px;
-    display: flex;
     margin-left: 20px;
     .block {
       // box-sizing: border-box;
@@ -70,6 +71,7 @@
 
   .delegation-desc {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     // box-sizing: border-box;
     padding: 20px;

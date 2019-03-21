@@ -13,6 +13,12 @@ import './index.scss'
  * 2. cannot support box-sizing style
  */
 
+/**
+ * things todo
+ * 1. auto upload images and transform image url
+ * 2. add global sass variables and mixins
+ */
+
 // import ICON_SEARCH from '@/assets/images/search.svg'
 // import ICON_CARD from '@/assets/images/tools_card.svg'
 // import ICON_SCAN from '@/assets/images/tools_scan.svg'
