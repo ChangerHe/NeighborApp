@@ -1,4 +1,4 @@
-@import "@styles/theme.scss";
+@import "../../../styles/theme.scss";
 
 .block-title {
   display: flex;
@@ -12,23 +12,21 @@
   &-title-text {
     font-size: 40px;
     font-weight: bold;
-    color: rgb(57, 57, 57);
+    color: $color-f1;
   }
 
   &-subtitle {
     padding-bottom: 0px;
-    /*postcss-pxtransform rn eject enable*/
-    padding-bottom: 4px;
-    /*postcss-pxtransform rn eject disable*/
+    @include eject(padding-bottom, 4px);
   }
 
   &-subtitle-text {
     font-size: 24px;
-    color: rgb(144, 144, 144);
+    color: $color-f2;
   }
 
   &-see-more-text {
     font-size: 32px;
-    color: rgb(235, 91, 88);
+    color: $color-z1;
   }
 }

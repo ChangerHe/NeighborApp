@@ -1,4 +1,4 @@
-@import "@styles/theme.scss";
+@import "../../../styles/theme.scss";
 
 .intro-card {
   &-card {
@@ -14,12 +14,12 @@
   }
 
   &-desc {
-    @include textAlign(center);
+    @include eject(text-align, center);
   }
 
   &-desc-text {
     font-size: 24px;
-    color: rgb(144, 144, 144);
+    color: $color-f2;
     text-align: center;
   }
 }

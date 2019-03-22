@@ -1,12 +1,12 @@
-@import "@styles/theme.scss";
+@import "../../../styles/theme.scss";
 
 .category-card {
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 140px;
-  width: 100px;
+  flex: 0 0 140px;
+  width: 140px;
   height: 160px;
-  padding: 48px 20px 0;
+  padding: 48px 0 0;
+  @include flex(center, center);
+  flex-direction: column;
 
   &-img {
     width: 100px;
@@ -14,7 +14,7 @@
   }
 
   &-desc {
-    @include textAlign(center);
+    @include eject(text-align, center);
   }
 
   &-desc-text {

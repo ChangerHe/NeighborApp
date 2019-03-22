@@ -1,10 +1,10 @@
-@import "@styles/theme.scss";
+@import "../../../styles/theme.scss";
 
 @mixin styleBlock() {
   width: 80px;
   height: 72px;
   margin: 0 10px;
-  background-color: rgb(33,33,33);
+  background-color: $color-f1;
   border-radius: 12px;
 }
 
@@ -29,7 +29,8 @@
     height: 56px;
     // box-sizing: border-box;
     padding: 0 20px;
-    @include textAlign(right);
+    @include eject(text-align, right);
+    @include eject(line-height, 56px);
     background-color: rgba(0,0,0,.4);
 
     &-text {
@@ -37,7 +38,7 @@
       font-weight: bold;
       line-height: 56px;
       font-size: 32px;
-      color: rgb(250, 94, 91);
+      color: $color-z1;
     }
   }
 
@@ -50,7 +51,8 @@
 
     &-desc {
       @include styleBlock();
-      @include textAlign(center);
+      @include eject(text-align, center);
+      @include eject(line-height, 20px);
 
       &-wrapper {
         padding: 8px 16px;
@@ -69,7 +71,7 @@
       &-text {
         text-align: center;
         font-size: 20px;
-        color: rgb(255, 255, 255);
+        color: $color-f6;
       }
     }
 
@@ -79,63 +81,75 @@
     }
   }
   &-interval-num {
-    @include textAlign(center);
+    @include eject(text-align, center);
     height: 30px;
-    /*postcss-pxtransform rn eject enable*/
-    height: 20px;
-    /*postcss-pxtransform rn eject disable*/
+    @include eject(height, 20px);
+    @include eject(line-height, 30px);
+    @include eject(padding-top, 10px);
   }
   &-interval-num-text {
     line-height: 30px;
-    /*postcss-pxtransform rn eject enable*/
-    line-height: 20px;
-    /*postcss-pxtransform rn eject disable*/
     text-align: center;
     font-size: 32px;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: $color-f5;
   }
   &-interval-unit {
     height: 20px;
-    @include textAlign(center);
+    @include eject(text-align, center);
+    @include eject(line-height, 30px);
   }
   &-interval-unit-text {
     font-size: 16px;
     line-height: 20px;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: $color-f6;
   }
 
   &-desc {
-    display: flex;
+    @include flex(space-between, center);
     flex-direction: row;
-    justify-content: space-between;
     // box-sizing: border-box;
     padding: 20px;
+
   }
 
-  &-desc-desc-title-text {
-    font-size: 28px;
-    color: rgb(57, 57, 57);
-  }
-
-  &-situation-text {
-    font-size: 24px;
-    color: rgb(144, 144, 144);
+  &-situation {
+    height: 24px;
+    &-text {
+      font-size: 24px;
+      color: $color-f2;
+    }
   }
 
   &-join {
     width: 144px;
     height: 56px;
     border-radius: 56px;
-    background-color: rgb(235, 91, 88);
-    @include textAlign(center);
+    background-color: $color-z1;
+    @include eject(text-align, center);
+    @include eject(line-height, 56px);
 
     &-text {
-      color: #fff;
+      color: $color-f6;
       font-size: 28px;
       text-align: center;
       line-height: 56px;
+    }
+  }
+
+
+  &-desc-desc {
+    // background-color: #000;
+  }
+
+
+  &-desc-title {
+    height: 28px;
+    @include eject(line-height, 28px);
+    &-text {
+      font-size: 28px;
+      color: $color-f1;
     }
   }
 }

@@ -68,3 +68,9 @@
   text-align: $pos;
   /*postcss-pxtransform rn eject disable*/
 }
+
+@mixin flex($horizontal, $vertical) {
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}

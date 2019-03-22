@@ -1,4 +1,4 @@
-@import "@styles/theme.scss";
+@import "../../styles/theme.scss";
 
 @mixin houdredPercent() {
   width: 100%;
@@ -6,20 +6,16 @@
 }
 
 .index {
-  background-color: #fff;
+  background-color: $color-f6;
   &-icon {
     width: 48px;
     height: 48px;
   }
 
   &-search {
+    @include flex(space-between, center);
     height: 88px;
-    // width: 100%;
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    // box-sizing: border-box;
     padding: 0 40px;
   }
 
@@ -31,7 +27,7 @@
     flex: 1;
     height: 56px;
     border-radius: 56px;
-    background-color: #ececec;
+    background-color: $color-f5;
   }
 
   &-scaner-icon {
@@ -41,22 +37,18 @@
 
   &-desc-text{
     font-size: 24px;
-    color: rgb(144, 144, 144);
+    color: $color-f2;
   }
 
   &-pig {
-    display: flex;
+    @include flex(flex-end, center);
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
     flex: 0 0 88px;
   } 
 
   &-cart {
-    display: flex;
+    @include flex(flex-end, center);
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
     flex: 0 0 88px;
     
   }
@@ -75,9 +67,8 @@
   }
 
   &-category {
-    display: flex;
+    @include flex(space-around, center);
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 20px;
   }
@@ -90,17 +81,15 @@
   }
 
   &-ad {
-    // width: 100%;
     height: 144px;
-    // box-sizing: border-box;
     padding: 0 40px;
     margin: 40px 0;
-  }
 
-  &-ad-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
+    &-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
   }
 
   &-youling-badge {
@@ -124,32 +113,35 @@
     left: 0;
     width: 100%;
     height: 100%;
-    @include textAlign(center);
+    @include eject(text-align, center);
   }
 
   &-rank-detail-num {
     width: 100%;
-    @include textAlign(center);
+    @include eject(text-align, center);
     height: 40px;
   }
 
   &-rank-detail-num-text {
     font-size: 32px;
     font-weight: bold;
-    color: #fff;
+    color: $color-f6;
     text-align: center;
 
   }
 
   &-rank-detail-desc {
-    @include textAlign(center);
+    @include eject(text-align, center);
   }
 
-  &-rank-detail-desc-text {
-    line-height: 20px;
-    font-size: 20px;
-    color: #fff;
-    text-align: center;
+  &-rank-detail-desc {
+    @include eject(line-height, 40px);
+    &-text {
+      line-height: 20px;
+      font-size: 20px;
+      color: $color-f6;
+      text-align: center;
+    }
   }
 
   &-total-num {
@@ -158,7 +150,7 @@
 
   &-line {
     height: 1PX;
-    background-color: #eee;
+    background-color: $color-f5;
   }
 
   &-total-num-num {
@@ -166,49 +158,52 @@
     top: -30px;
     width: 280px;
     margin: 0 auto;
-    background-color: #fff;
-    @include textAlign(center);
+    background-color: $color-f6;
+    @include eject(text-align, center);
   }
 
-  &-total-num-num-text {
-    text-align: center;
-    font-weight: bold;
-    color: rgb(144, 144, 144);
-    font-size: 36px;
+  &-total-num-num {
+    @include eject(line-height, 40px);
+    &-text {
+      text-align: center;
+      font-weight: bold;
+      color: $color-f2;
+      font-size: 36px;
+    }
   }
 
   &-total-num-desc {
     position: relative;
     top: -30px;
-    @include textAlign(center);
+    @include eject(text-align, center);
   }
 
   &-total-num-desc-text {
     font-size: 20px;
-    color: rgb(201, 201, 201);
+    color: $color-f4;
     text-align: center;
   }
 
   &-youling-desc {
     // box-sizing: border-box;
     padding: 40px 72px 10px;
-    @include textAlign(center);
+    @include eject(text-align, center);
   }
 
   &-youling-desc-text {
     text-align: center;
     font-size: 24px;
-    color: rgb(144, 144, 144);
+    color: $color-f2;
   }
 
   &-youling-detail {
     margin-bottom: 100px;
-    @include textAlign(center);
+    @include eject(text-align, center);
   }
 
   &-youling-detail-text {
     font-size: 24px;
-    color: rgb(235, 91, 88);
+    color: $color-z1;
     text-align: center;
   }
 }
