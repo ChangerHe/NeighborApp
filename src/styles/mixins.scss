@@ -1,8 +1,4 @@
 /**
- * 对于部分不兼容的样式，可以通过 mixins 统一处理
- */
-
-/**
  * // NOTE Taro 编译成 RN 时对 border 的处理有问题
  * RN 不支持针对某一边设置 style，即 border-bottom-style 会报错
  * 那么 border-bottom: 1px 就需要写成如下形式：
@@ -16,7 +12,8 @@
 }
 
 /**
- * 对于不能打包到 RN 的样式，可以用 mixins 引入，相对美观一些
+ * 对于不能打包到 RN 的样式，可以用 mixins 引入
+ * 目前已知的样式需要调整的有: line-height   text-align  在小程序/H5端需要在View上绑定, 但是rn端则需要在text上绑定
  */
 @mixin eject($attr, $value) {
   /*postcss-pxtransform rn eject enable*/
@@ -34,15 +31,11 @@
   @include eject($attr, 1PX);
 }
 
-/**
- * NOTE RN 无法通过 text-overflow 实现省略号，这些代码不能打包到 RN 中
- */
+// RN 无法通过样式实现单行省略
 @mixin text-ellipsis() {
-  /*postcss-pxtransform rn eject enable*/
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  /*postcss-pxtransform rn eject disable*/
+  @include eject(overflow, hidden);
+  @include eject(white-space, nowrap);
+  @include eject(text-overflow, ellipsis);
 }
 
 /**
@@ -56,16 +49,6 @@
   -webkit-line-clamp: $line;
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
-  /*postcss-pxtransform rn eject disable*/
-}
-
-/**
- * NOTE RN无法在view中设置textAlign 而这个在其他端是必须的
- */
-
-@mixin textAlign($pos) {
-  /*postcss-pxtransform rn eject enable*/
-  text-align: $pos;
   /*postcss-pxtransform rn eject disable*/
 }
 
