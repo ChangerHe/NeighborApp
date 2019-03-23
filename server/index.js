@@ -2,9 +2,9 @@ const express = require('express');
 
 const timeLog = require('./middleware/timeLog')
 const neighbor = require('./routes/neighbor')
+const { PORT } = require('./constant/index')
 
 const app = express();
-const PORT = 3000;
 
 
 app.use(timeLog)

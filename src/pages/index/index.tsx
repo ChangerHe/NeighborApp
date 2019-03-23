@@ -4,6 +4,7 @@ import { View, Button, Text, Image, Swiper, SwiperItem, ScrollView } from '@taro
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
+import fetch from '../../utils/request'
 
 import './index.scss'
 
@@ -110,65 +111,9 @@ class Index extends Component {
   }
 
   state = {
-    category: [{
-      img: CAT_FRUITS,
-      desc: '好食'
-    }, {
-      img: CAT_MILK,
-      desc: '喝水'
-    }, {
-      img: CAT_FRUITS,
-      desc: '好食'
-    }, {
-      img: CAT_MILK,
-      desc: '喝水'
-    }, {
-      img: CAT_FRUITS,
-      desc: '好食'
-    }, {
-      img: CAT_MILK,
-      desc: '喝水'
-    }, {
-      img: CAT_FRUITS,
-      desc: '好食'
-    }, {
-      img: CAT_MILK,
-      desc: '喝水'
-    }, {
-      img: CAT_FRUITS,
-      desc: '好食'
-    }, {
-      img: CAT_MILK,
-      desc: '喝水'
-    }],
-    introGoodsList: [{
-      img: CAT_FRUITS,
-      desc: '好食'
-    }, {
-      img: CAT_MILK,
-      desc: '喝水'
-    }, {
-      img: CAT_FRUITS,
-      desc: '好食'
-    }, {
-      img: CAT_MILK,
-      desc: '喝水'
-    }],
-    delegationList: [{
-      img: DELE_PHOTO,
-      time: 123456000,
-      hadGroupedNum: 20,
-      groupingNum: 78,
-      desc: '温州 | 手制胡萝卜年糕',
-      price: 22,
-    }, {
-      img: DELE_PHOTO,
-      time: 123456000,
-      hadGroupedNum: 20,
-      groupingNum: 78,
-      desc: '温州 | 手制胡萝卜年糕',
-      price: 22,
-    }]
+    categoryList: [],
+    introGoodsList: [],
+    delegationList: []
   }
 
   componentWillReceiveProps (nextProps: any) {
@@ -177,12 +122,46 @@ class Index extends Component {
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () {
+    this.getIntroList()
+    this.getDelegationList()
+    this.getCategoryList()
+  }
 
   componentDidHide () { }
 
+  getIntroList() {
+    fetch({
+      url: '/intro'
+    }).then((data) => {
+      this.setState({
+        introGoodsList: data
+      })
+    })
+  }
+
+  getDelegationList() {
+    fetch({
+      url: '/delegation'
+    }).then((data) => {
+      this.setState({
+        delegationList: data
+      })
+    })
+  }
+
+  getCategoryList() {
+    fetch({
+      url: '/category'
+    }).then((data) => {
+      this.setState({
+        categoryList: data
+      })
+    })
+  }
+
   render () {
-    const { category, introGoodsList, delegationList } = this.state
+    const { categoryList, introGoodsList, delegationList } = this.state
     return (
       <View className='index'>
         <View className='index-search'>
@@ -225,7 +204,7 @@ class Index extends Component {
         </Swiper>
         <View className='index-category'>
           {
-            category.map((v, i) => <CategoryCard key={i} icon={v.img} desc={v.desc} />)
+            categoryList.map((v, i) => <CategoryCard key={i} icon={v.img} desc={v.desc} />)
           }
         </View>
         <View className="index-intro-goods">
