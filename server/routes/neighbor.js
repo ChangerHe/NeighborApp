@@ -15,11 +15,11 @@ router.get('/category', (req, res) => {
 });
 
 router.get('/intro', (req, res) => {
-  res.json()
+  res.json(intro)
 })
 
 router.get('/delegation', (req, res) => {
-  res.json()  
+  res.json(delegation)  
 })
 
 module.exports = router;
