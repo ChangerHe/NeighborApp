@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "NeighborApp",
+    "description": "A cross platform application, Create by Zhuzher frontend team, Base on Taro",
+    "slug": "neighborapp",
+    "sdkVersion": "27.0.1",
+    "privacy": "public",
+    "githubUrl": "https://github.com/ChangerHe/NeighborApp",
+    "primaryColor": "#fff",
+    "icon": "https://img.4009515151.com/app_icon.png"
+  }
+}
