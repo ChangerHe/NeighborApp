@@ -12,8 +12,9 @@ import './index.scss'
  * problem collection:
  * 1. cannot support svg image in native platform
  * 2. cannot support box-sizing style
- * 3. text-align in View is usefull in h5/weapp bus useless in rn
+ * 3. text-align in View is usefull in h5/weapp bus useless in rn, line-height so too, cannot support single line ellipsis
  * 4. expo send package must over the wall
+ * 5. weapp is limits 2m memory, so images must be uploaded
  */
 
 /**
